@@ -65,3 +65,4 @@ apt-get install -y dmitry
 apt-get install -y havp
 apt-get install -y krdc
 apt-get install -y medusa
+msfdb init
