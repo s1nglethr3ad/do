@@ -89,6 +89,7 @@ echo "...exiting /root/wordlists/; back to /root/"
 cd /root/
 clear
 
+echo "apt-get's and pip installs"
 apt-get install -y postgresql
 apt-get install -y metasploit-framework
 apt-get install -y nmap
@@ -118,4 +119,7 @@ apt-get install -y dmitry
 apt-get install -y havp
 apt-get install -y krdc
 apt-get install -y medusa
+clear
+
+echo "initialize metasploit database with msfdb init"
 msfdb init
