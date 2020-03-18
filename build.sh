@@ -37,6 +37,7 @@ git clone https://github.com/digininja/CeWL.git
 echo "...exiting /root/wordlists"
 cd /root/
 
+apt-get install -y postgresql
 apt-get install -y metasploit-framework
 apt-get install -y nmap
 apt-get install -y zenmap
