@@ -51,12 +51,6 @@ git clone https://github.com/CoreSecurity/impacket.git
 cd /root/
 clear
 
-echo "Burpsuite into /opt/tools/webapp/"
-cd /opt/tools/webapp/
-curl https://portswigger.net/DownloadUpdate.ashx?Product=Free -o burpsuite_free.jar
-cd /root/
-clear
-
 echo "Recon tools into /opt/tools/recon/."
 cd /opt/tools/recon/
 git clone https://github.com/guelfoweb/knock.git
@@ -103,26 +97,18 @@ apt-get install -y zenmap
 apt-get install -y w3af w3af-console
 apt-get install -y nikto
 apt-get install -y whatweb
-apt-get install -y john
-apt-get install -y pdfcrack
-apt-get install -y fcrackzip
-apt-get install -y ophcrack
-apt-get install -y volatility
 apt-get install -y dff
 apt-get install -y ghex
-apt-get install -y aircrack-ng
-apt-get install -y ettercap-graphical && apt-get install ettercap-common && apt-get install ettercap-dbg
 apt-get install -y yersinia
-apt-get install -y sslscan kismet tcpdump dsniff driftnet
+apt-get install -y sslscan tcpdump dsniff driftnet
 pip install wafw00f
 pip install --upgrade setuptools && pip install sslyze
 pip install droopescan
 pip install sqlmap
 pip install sslscan && apt-get install sslscan
 pip install ldap3
-apt-get install -y hydra hydra-gtk
+apt-get install -y hydra
 apt-get install -y dmitry
-apt-get install -y havp
 apt-get install -y krdc
 apt-get install -y medusa
 clear
