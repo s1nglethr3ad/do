@@ -10,7 +10,7 @@ resource "digitalocean_droplet" "web" {
   name     = "tf-TEST-1"
   image    = "ubuntu-18-04-x64"
   region   = "nyc3"
-  size     = "512mb"
+  size     = "s-4vcpu-8gb"
   ssh_keys = [SSH-ID]
   provisioner "remote-exec" {
     inline = [
