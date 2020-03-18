@@ -2,7 +2,7 @@ echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/
 gpg --keyserver pgpkeys.mit.edu --recv-key  ED444FF07D8D0BF6
 gpg -a --export ED444FF07D8D0BF6 | sudo apt-key add -
 apt-get -y update
-apt-get -y upgrade
+DEBIAN_FRONTEND=noninteractive apt-get upgrade -yq
 apt-get -y dist-upgrade
 apt-get -y autoremove
 clear
