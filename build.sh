@@ -13,6 +13,9 @@ apt-get install -y wget
 
 echo "Creating /opt/tools for tools download."
 mkdir /opt/tools/
+mkdir /opt/tools/webapp/
+mkdir /opt/tools/recon
+
 cd /opt/tools/
 git clone https://github.com/lgandx/Responder
 git clone https://github.com/EmpireProject/Empire.git
@@ -24,9 +27,57 @@ git clone https://github.com/peewpw/Invoke-PSImage
 git clone https://github.com/madmantm/powershell
 git clone https://github.com/Veil-Framework/Veil-Evasion.git
 git clone https://github.com/Veil-Framework/Veil-PowerView.git
+git clone https://github.com/longld/peda.git
+git clone https://github.com/govolution/avet
+git clone https://github.com/g0tmi1k/exe2hex.git
+git clone https://github.com/huntergregal/mimipenguin
+git clone https://github.com/lockfale/meterpreterjank.git
+git clone https://github.com/PenturaLabs/Linux_Exploit_Suggester.git
+git clone https://github.com/vulnersCom/getsploit
+git clone https://github.com/trustedsec/unicorn
+git clone https://github.com/mattifestation/PowerSploit.git
+git clone https://github.com/putterpanda/mimikittenz.git
+git clone https://github.com/PowerShellEmpire/PowerTools.git
+git clone https://github.com/Kevin-Robertson/Inveigh.git
+git clone https://github.com/xan7r/kerberoast.git
+git clone https://github.com/breenmachine/RottenPotatoNG
+git clone https://github.com/AlessandroZ/LaZagne.git
+git clone https://github.com/CoreSecurity/impacket.git
+cd /root/
+clear
+
+echo "Burpsuite into /opt/tools/webapp/"
+cd /opt/tools/webapp/
+curl https://portswigger.net/DownloadUpdate.ashx?Product=Free -o burpsuite_free.jar
 cd /root/
 
-echo "Creating /root/wordlists directory."
+echo "Recon tools into /opt/tools/recon/"
+cd /opt/tools/recon/
+git clone https://github.com/guelfoweb/knock.git
+git clone https://github.com/laramies/theHarvester.git
+git clone https://github.com/eth0izzle/bucket-stream
+git clone https://github.com/dmuhs/pastebin-scraper.git
+git clone https://github.com/breenmachine/httpscreenshot
+git clone https://github.com/mschwager/gitem
+git clone https://github.com/hardikvasa/google-images-download.git
+git clone https://github.com/m0rtem/CloudFail
+git clone https://github.com/laramies/metagoofil
+git clone https://github.com/TheRook/subbrute.git
+git clone https://github.com/ejcx/subdomainer.git
+git clone https://github.com/aboul3la/Sublist3r.git
+git clone https://github.com/ChrisTruncer/EyeWitness.git
+git clone https://github.com/hatRiot/clusterd.git
+git clone https://github.com/dmuhs/pastebin-scraper
+git clone https://github.com/nyxgeek/o365recon
+git clone https://github.com/darkoperator/dnsrecon.git
+git clone https://github.com/urbanadventurer/WhatWeb.git
+git clone https://github.com/leebaird/discover.git
+git clone https://github.com/Mr-Un1k0d3r/RedTeamPowershellScripts.git
+git clone https://github.com/makefu/dnsmap.git
+cd /root/
+clear
+
+echo "Creating /root/wordlists/ directory."
 mkdir /root/wordlists/
 cd /root/wordlists/
 git clone https://github.com/danielmiessler/SecLists.git
@@ -34,8 +85,9 @@ wget -nc http://downloads.skullsecurity.org/passwords/rockyou.txt.bz2
 wget -nc http://www.tekdefense.com/downloads/wordlists/1aNormusWL.zip
 wget -nc http://www.tekdefense.com/downloads/wordlists/KippoWordlist.txt
 git clone https://github.com/digininja/CeWL.git
-echo "...exiting /root/wordlists"
+echo "...exiting /root/wordlists/; back to /root/"
 cd /root/
+clear
 
 apt-get install -y postgresql
 apt-get install -y metasploit-framework
@@ -60,6 +112,7 @@ pip install --upgrade setuptools && pip install sslyze
 pip install droopescan
 pip install sqlmap
 pip install sslscan && apt-get install sslscan
+pip install ldap3
 apt-get install -y hydra hydra-gtk
 apt-get install -y dmitry
 apt-get install -y havp
