@@ -130,4 +130,5 @@ clear
 echo "Initialize metasploit database with msfdb init."
 echo "Create /usr/bin/locale-check needed for database initialization."
 touch /usr/bin/locale-check
+chmod 755 /usr/bin/locale-check
 msfdb init
