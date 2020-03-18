@@ -16,7 +16,6 @@ clear
 
 echo "Creating /opt/tools and sub dirs for tools download."
 mkdir /opt/tools/
-mkdir /opt/tools/webapp/
 mkdir /opt/tools/recon
 clear
 
@@ -25,17 +24,13 @@ cd /opt/tools/
 git clone https://github.com/lgandx/Responder
 git clone https://github.com/EmpireProject/Empire.git
 git clone https://github.com/offensive-security/exploit-database
-git clone https://github.com/toolswatch/vFeed.git
 git clone https://github.com/secretsquirrel/the-backdoor-factory
 git clone https://github.com/FuzzySecurity/PowerShell-Suite.git
 git clone https://github.com/peewpw/Invoke-PSImage
 git clone https://github.com/madmantm/powershell
 git clone https://github.com/Veil-Framework/Veil-Evasion.git
 git clone https://github.com/Veil-Framework/Veil-PowerView.git
-git clone https://github.com/longld/peda.git
-git clone https://github.com/govolution/avet
 git clone https://github.com/g0tmi1k/exe2hex.git
-git clone https://github.com/huntergregal/mimipenguin
 git clone https://github.com/lockfale/meterpreterjank.git
 git clone https://github.com/PenturaLabs/Linux_Exploit_Suggester.git
 git clone https://github.com/vulnersCom/getsploit
@@ -43,10 +38,7 @@ git clone https://github.com/trustedsec/unicorn
 git clone https://github.com/mattifestation/PowerSploit.git
 git clone https://github.com/putterpanda/mimikittenz.git
 git clone https://github.com/PowerShellEmpire/PowerTools.git
-git clone https://github.com/Kevin-Robertson/Inveigh.git
 git clone https://github.com/xan7r/kerberoast.git
-git clone https://github.com/breenmachine/RottenPotatoNG
-git clone https://github.com/AlessandroZ/LaZagne.git
 git clone https://github.com/CoreSecurity/impacket.git
 cd /root/
 clear
@@ -58,8 +50,6 @@ git clone https://github.com/laramies/theHarvester.git
 git clone https://github.com/eth0izzle/bucket-stream
 git clone https://github.com/dmuhs/pastebin-scraper.git
 git clone https://github.com/breenmachine/httpscreenshot
-git clone https://github.com/mschwager/gitem
-git clone https://github.com/hardikvasa/google-images-download.git
 git clone https://github.com/m0rtem/CloudFail
 git clone https://github.com/laramies/metagoofil
 git clone https://github.com/TheRook/subbrute.git
@@ -73,7 +63,6 @@ git clone https://github.com/darkoperator/dnsrecon.git
 git clone https://github.com/urbanadventurer/WhatWeb.git
 git clone https://github.com/leebaird/discover.git
 git clone https://github.com/Mr-Un1k0d3r/RedTeamPowershellScripts.git
-git clone https://github.com/makefu/dnsmap.git
 cd /root/
 clear
 
@@ -93,8 +82,7 @@ echo "apt-get's and pip installs"
 apt-get install -y postgresql
 apt-get install -y metasploit-framework
 apt-get install -y nmap
-apt-get install -y zenmap
-apt-get install -y w3af w3af-console
+apt-get install -y w3af
 apt-get install -y nikto
 apt-get install -y whatweb
 apt-get install -y dff
