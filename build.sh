@@ -37,13 +37,14 @@ git clone https://github.com/digininja/CeWL.git
 echo "...exiting /root/wordlists"
 cd /root/
 
-echo "Creating /root/Downloads directory for metasploit install."
-mkdir /root/Downloads/
-cd /root/Downloads/
-curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall
-echo "...exiting /root/Downloads"
-cd ..
+#echo "Creating /root/Downloads directory for metasploit install."
+#mkdir /root/Downloads/
+#cd /root/Downloads/
+#curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall
+#echo "...exiting /root/Downloads"
+#cd /root/Downloads/
 
+apt-get install -y metasploit-framework
 apt-get install -y nmap
 apt-get install -y zenmap
 apt-get install -y w3af w3af-console
