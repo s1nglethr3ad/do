@@ -1,3 +1,4 @@
+echo "Getting ready for system updates.  Kali repo and key add."
 echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/apt/sources.list
 gpg --keyserver pgpkeys.mit.edu --recv-key  ED444FF07D8D0BF6
 gpg -a --export ED444FF07D8D0BF6 | sudo apt-key add -
@@ -8,14 +9,18 @@ apt-get -y dist-upgrade
 apt-get -y autoremove
 clear
 
+echo "Install git and wget"
 apt-get install -y git
 apt-get install -y wget
+clear
 
-echo "Creating /opt/tools for tools download."
+echo "Creating /opt/tools and sub dirs for tools download."
 mkdir /opt/tools/
 mkdir /opt/tools/webapp/
 mkdir /opt/tools/recon
+clear
 
+echo "Git download into /opt/tools."
 cd /opt/tools/
 git clone https://github.com/lgandx/Responder
 git clone https://github.com/EmpireProject/Empire.git
@@ -50,6 +55,7 @@ echo "Burpsuite into /opt/tools/webapp/"
 cd /opt/tools/webapp/
 curl https://portswigger.net/DownloadUpdate.ashx?Product=Free -o burpsuite_free.jar
 cd /root/
+clear
 
 echo "Recon tools into /opt/tools/recon/."
 cd /opt/tools/recon/
