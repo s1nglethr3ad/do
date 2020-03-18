@@ -51,7 +51,7 @@ cd /opt/tools/webapp/
 curl https://portswigger.net/DownloadUpdate.ashx?Product=Free -o burpsuite_free.jar
 cd /root/
 
-echo "Recon tools into /opt/tools/recon/"
+echo "Recon tools into /opt/tools/recon/."
 cd /opt/tools/recon/
 git clone https://github.com/guelfoweb/knock.git
 git clone https://github.com/laramies/theHarvester.git
@@ -121,5 +121,7 @@ apt-get install -y krdc
 apt-get install -y medusa
 clear
 
-echo "initialize metasploit database with msfdb init"
+echo "Initialize metasploit database with msfdb init."
+echo "Create /usr/bin/locale-check needed database initialization."
+touch /usr/bin/locale-check
 msfdb init
