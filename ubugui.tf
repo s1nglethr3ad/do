@@ -10,8 +10,8 @@ resource "digitalocean_droplet" "web" {
   provisioner "remote-exec" {
     inline = [
       "wget https://raw.githubusercontent.com/s1nglethr3ad/do/master/ubugui.sh",
-      "chmod +x build.sh",
-      "./build.sh",
+      "chmod +x ubugui.sh",
+      "./ubugui.sh",
     ]
     connection {
       type        = "ssh"
