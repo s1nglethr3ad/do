@@ -1,8 +1,9 @@
 echo "Getting ready for system updates.  Kali repo and key add."
 echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/apt/sources.list
-sleep 10
-gpg --keyserver pgpkeys.mit.edu --recv-key  ED444FF07D8D0BF6 & sleep 10
-gpg -a --export ED444FF07D8D0BF6 | sudo apt-key add - & sleep 10
+gpg --keyserver pgpkeys.mit.edu --recv-key  ED444FF07D8D0BF6 
+sleep 30
+gpg -a --export ED444FF07D8D0BF6 | sudo apt-key add - 
+sleep 30
 export DEBIAN_FRONTEND=noninteractive
 apt-get -y update
 apt-get upgrade -yq
