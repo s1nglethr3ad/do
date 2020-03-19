@@ -7,17 +7,17 @@ apt-get -y update
 apt-get upgrade -yq
 apt-get -y dist-upgrade
 apt-get -y autoremove
-clear
+echo "DONE WITH SYSTEM UPDATE"
 
 echo "Install git and wget"
 apt-get install -y git
 apt-get install -y wget
-clear
+echo "DONE WITH GIT AND WGET"
 
 echo "Creating /opt/tools and sub dirs for tools download."
 mkdir /opt/tools/
 mkdir /opt/tools/recon
-clear
+echo "DONE MAKING TOOL DIRECTORIES"
 
 echo "Git download into /opt/tools."
 cd /opt/tools/
@@ -41,7 +41,7 @@ git clone https://github.com/PowerShellEmpire/PowerTools.git
 git clone https://github.com/xan7r/kerberoast.git
 git clone https://github.com/CoreSecurity/impacket.git
 cd /root/
-clear
+echo "DONE WITH TOOLS"
 
 echo "Recon tools into /opt/tools/recon/."
 cd /opt/tools/recon/
@@ -64,7 +64,7 @@ git clone https://github.com/urbanadventurer/WhatWeb.git
 git clone https://github.com/leebaird/discover.git
 git clone https://github.com/Mr-Un1k0d3r/RedTeamPowershellScripts.git
 cd /root/
-clear
+echo "DONE WITH RECON TOOLS"
 
 echo "Creating /root/wordlists/ directory."
 mkdir /root/wordlists/
@@ -76,7 +76,7 @@ wget -nc http://www.tekdefense.com/downloads/wordlists/KippoWordlist.txt
 git clone https://github.com/digininja/CeWL.git
 echo "...exiting /root/wordlists/; back to /root/"
 cd /root/
-clear
+echo "DONE WITH WORDLISTS"
 
 echo "apt-get's and pip installs"
 apt-get install -y postgresql
@@ -99,7 +99,7 @@ apt-get install -y hydra
 apt-get install -y dmitry
 apt-get install -y krdc
 apt-get install -y medusa
-clear
+echo "DONE WITH APT-GET TOOLS AND PIP"
 
 echo "Initialize metasploit database with msfdb init."
 echo "Create /usr/bin/locale-check needed for database initialization."
