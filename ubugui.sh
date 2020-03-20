@@ -7,9 +7,9 @@ sleep 30
 apt-get -y dist-upgrade
 sleep 30
 apt-get install -y ubuntu-desktop
-sleep 30
-apt-get install -y xrdp
-systemctl enable xrdp
-useradd -p password burp
-usermod -aG admin burp 
-usermod -aG sudo burp
+#sleep 30
+#apt-get install -y xrdp
+#systemctl enable xrdp
+#useradd -p password burp
+#usermod -aG admin burp 
+#usermod -aG sudo burp
