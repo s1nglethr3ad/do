@@ -1,7 +1,7 @@
 #!/bin/bash
 # Install XFCE4
 echo "----Install Xubuntu-desktop"
-sudo apt install xfce4 xfce4-goodies -y
+apt install xfce4 xfce4-goodies -y
 
 echo "----Install VNC Server"
 # Verify if vnc server is installed
