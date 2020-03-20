@@ -1,3 +1,4 @@
+#!/bin/bash
 # Install XFCE4
 echo "----Install Xubuntu-desktop"
 sudo apt install xfce4 xfce4-goodies -y
