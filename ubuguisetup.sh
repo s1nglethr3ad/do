@@ -22,9 +22,8 @@ expect "Password:"
 send "$pass\r"
 expect "Verify:"
 send "$pass\r"
-expect eof
-exit
-EOF
+expect "Would you like to enter a view-only password (y/n)?"
+send "n\r"
 
 echo "----Run vncserver"
 vncserver
