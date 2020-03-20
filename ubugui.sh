@@ -1,5 +1,6 @@
 echo "SYSTEM UPDATE"
 export DEBIAN_FRONTEND=noninteractive
+add-apt-repository universe
 apt-get -y update
 sleep 30
 apt-get upgrade -yq
