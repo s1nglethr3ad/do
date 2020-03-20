@@ -8,7 +8,7 @@ apt-get upgrade -yq
 sleep 30
 apt-get -y dist-upgrade
 sleep 30
-apt install xfce4 xfce4-goodies xorg dbus-x11 x11-xserver-utils
+apt install -y xfce4 xfce4-goodies xorg dbus-x11 x11-xserver-utils
 #apt-get install -y ubuntu-desktop
 #sleep 30
 #apt-get install -y xrdp
