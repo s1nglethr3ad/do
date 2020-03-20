@@ -15,10 +15,11 @@ fi
 
 echo "----Run vncserver"
 vncserver
+sleep 5
 user="$USER"
 pass="password"
 /usr/bin/expect <<EOF
-spawn /usr/bin/vncpasswd $user
+#spawn /usr/bin/vncpasswd $user
 expect "Password:"
 send "$pass\r"
 expect "Verify:"
