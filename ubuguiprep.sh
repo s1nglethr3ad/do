@@ -1,7 +1,7 @@
 echo "SYSTEM UPDATE"
 export DEBIAN_FRONTEND=noninteractive
 add-apt-repository universe
-'useradd burp; echo -e "password\npassword" | passwd burp'
+useradd burp -p password
 sleep 5
 usermod -aG admin burp 
 usermod -aG sudo burp
