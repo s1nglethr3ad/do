@@ -6,7 +6,7 @@ apt-get -y dist-upgrade
 apt-get install --no-install-recommends ubuntu-mate-core ubuntu-mate-desktop -y
 apt-get install mate-core mate-desktop-environment mate-notification-daemon xrdp -y
 echo "ADD BURP USER"
-adduser burp
+useradd -p password burp
 usermod -aG admin burp 
 usermod -aG sudo burp
 su - burp
