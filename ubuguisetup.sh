@@ -49,5 +49,6 @@ ExecStop=/usr/bin/vncserver -kill :%i
 [Install]
 WantedBy=multi-user.target
 EOF
+chmod 755 /etc/systemd/system/vncserver@.service
 systemctl daemon-reload && systemctl enable vncserver@1.service
 echo "----Time to reboot!"
