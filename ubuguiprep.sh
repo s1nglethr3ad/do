@@ -9,6 +9,7 @@ apt-get upgrade -yq
 sleep 30
 apt-get -y dist-upgrade
 sleep 30
+apt-get install -y expect
 useradd burp -p password
 usermod -aG admin burp 
 usermod -aG sudo burp
