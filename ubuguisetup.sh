@@ -13,13 +13,13 @@ if [[ $? == 1 ]]
                 echo "Already installed"
 fi
 
+#Run vncserver and pass parameters
 echo "----Run vncserver"
 vncserver
 sleep 5
 user="$USER"
 pass="password"
 /usr/bin/expect <<EOF
-#spawn /usr/bin/vncpasswd $user
 expect "Password:"
 send "$pass\r"
 expect "Verify:"
@@ -30,6 +30,7 @@ expect eof
 exit
 EOF
 
+#Setup firewall rule
 echo "----Allow external connects by allowing ports in ufw"
 ufw allow 5901/tcp
 
