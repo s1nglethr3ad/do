@@ -13,7 +13,8 @@ if [[ $? == 1 ]]
                 echo "Already installed"
 fi
 
-echo "----Prepare for VNC Server first run"
+echo "----Run vncserver"
+vncserver
 user="$USER"
 pass="password"
 /usr/bin/expect <<EOF
@@ -25,11 +26,8 @@ send "$pass\r"
 expect "Would you like to enter a view-only password (y/n)?"
 send "n\r"
 
-echo "----Run vncserver"
-vncserver
-
 echo "----Allow external connects by allowing ports in ufw"
-sudo ufw allow 5901/tcp
+ufw allow 5901/tcp
 
 # Create systemd file
 echo "----Create Startup Script"
@@ -48,5 +46,5 @@ ExecStop=/usr/bin/vncserver -kill :%i
 [Install]
 WantedBy=multi-user.target
 EOF
-sudo systemctl daemon-reload && sudo systemctl enable vncserver@1.service
+systemctl daemon-reload && systemctl enable vncserver@1.service
 echo "----Time to reboot!"
