@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "SYSTEM UPDATE"
 export DEBIAN_FRONTEND=noninteractive
 add-apt-repository universe
@@ -11,4 +12,4 @@ sleep 30
 useradd burp -p password
 usermod -aG admin burp 
 usermod -aG sudo burp
-./root/ubuguisetup.sh
+bash ./ubuguisetup.sh
