@@ -25,6 +25,9 @@ expect "Verify:"
 send "$pass\r"
 expect "Would you like to enter a view-only password (y/n)?"
 send "n\r"
+expect eof
+exit
+EOF
 
 echo "----Allow external connects by allowing ports in ufw"
 ufw allow 5901/tcp
