@@ -10,7 +10,9 @@ resource "digitalocean_droplet" "web" {
   provisioner "remote-exec" {
     inline = [
       "wget https://raw.githubusercontent.com/s1nglethr3ad/do/master/ubuguiprep.sh",
+      "wget -P /root https://raw.githubusercontent.com/s1nglethr3ad/do/master/ubuguisetup.sh",
       "chmod +x ubuguiprep.sh",
+      "chmod +x /root/ubuguisetup.sh",
       "./ubuguiprep.sh",
     ]
     connection {
