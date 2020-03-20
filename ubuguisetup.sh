@@ -13,6 +13,19 @@ if [[ $? == 1 ]]
                 echo "Already installed"
 fi
 
+echo "----Prepare for VNC Server first run"
+user="$USER"
+pass="password"
+/usr/bin/expect <<EOF
+spawn /usr/bin/vncpasswd $user
+expect "Password:"
+send "$pass\r"
+expect "Verify:"
+send "$pass\r"
+expect eof
+exit
+EOF
+
 echo "----Run vncserver"
 vncserver
 
