@@ -4,7 +4,7 @@ apt-get -y update
 apt-get upgrade -yq
 apt-get -y dist-upgrade
 apt-get install -y ubuntu-desktop
-apt-get install xrdp
+apt-get install -y xrdp
 systemctl enable xrdp
 useradd -p password burp
 usermod -aG admin burp 
