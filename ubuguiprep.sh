@@ -12,4 +12,4 @@ sleep 30
 useradd burp -p password
 usermod -aG admin burp 
 usermod -aG sudo burp
-bash ./ubuguisetup.sh
+bash /root/ubuguisetup.sh
