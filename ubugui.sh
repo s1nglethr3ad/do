@@ -10,6 +10,6 @@ apt-get install -y ubuntu-desktop
 #sleep 30
 #apt-get install -y xrdp
 #systemctl enable xrdp
-#useradd -p password burp
+#'useradd burp; echo -e "password\npassword" | passwd burp'
 #usermod -aG admin burp 
 #usermod -aG sudo burp
