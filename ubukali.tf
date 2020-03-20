@@ -14,9 +14,9 @@ resource "digitalocean_droplet" "web" {
   ssh_keys = [SSH-ID]
   provisioner "remote-exec" {
     inline = [
-      "wget https://raw.githubusercontent.com/s1nglethr3ad/do/master/build.sh",
-      "chmod +x build.sh",
-      "./build.sh",
+      "wget https://raw.githubusercontent.com/s1nglethr3ad/do/master/ubukali.sh",
+      "chmod +x ubukali.sh",
+      "./ubukali.sh",
     ]
     connection {
       type        = "ssh"
