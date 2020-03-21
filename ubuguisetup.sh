@@ -45,3 +45,5 @@ WantedBy=multi-user.target
 EOF
 chmod 755 /etc/systemd/system/vncserver@.service
 systemctl daemon-reload && systemctl enable vncserver@1.service
+sleep 10
+shutdown -r now
