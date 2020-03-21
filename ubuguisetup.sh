@@ -1,10 +1,10 @@
 #!/bin/bash
-# Install XFCE4
-echo "----Install Xubuntu-desktop"
+#install XFCE
+echo "install xfce"
 apt install xfce4 xfce4-goodies -y
 
-echo "----Install VNC Server"
-# Verify if vnc server is installed
+echo "vncserver check"
+#vncserver check
 dpkg -s "tightvncserver"|grep "Status: install ok installed" > /dev/null 2>&1
 if [[ $? == 1 ]]
         then
@@ -13,8 +13,8 @@ if [[ $? == 1 ]]
                 echo "Already installed"
 fi
 
-#Run vncserver and pass parameters
-echo "----Run vncserver"
+#vncserver setup
+echo "run vncserver"
 mkdir /root/.vnc
 touch /root/.Xauthority
 echo password | vncpasswd -f > /root/.vnc/passwd
@@ -22,12 +22,12 @@ chown -R root:root /root/.vnc
 chmod 0600 /root/.vnc/passwd
 vncserver
 
-#Setup firewall rule
-echo "----Allow external connects by allowing ports in ufw"
+#firewall rule
+echo "opening firewall for vnc connect"
 ufw allow 5901/tcp
 
-#Create systemd file
-echo "----Create Startup Script"
+#make systemd file
+echo "startup script"
 cat <<EOF > /etc/systemd/system/vncserver@.service
 [Unit]
 Description=Start TightVNC server at startup
