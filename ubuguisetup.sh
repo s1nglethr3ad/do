@@ -16,6 +16,7 @@ fi
 #Run vncserver and pass parameters
 echo "----Run vncserver"
 mkdir /root/.vnc
+touch /root/.Xauthority
 echo password | vncpasswd -f > /root/.vnc/passwd
 chown -R root:root /root/.vnc
 chmod 0600 /root/.vnc/passwd
