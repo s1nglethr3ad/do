@@ -15,20 +15,8 @@ fi
 
 #Run vncserver and pass parameters
 echo "----Run vncserver"
+printf "password\npassword\n\n" | vncpasswd
 vncserver
-user="$USER"
-pass="password"
-sleep 10
-/usr/bin/expect <<EOF
-expect "Password:"
-send "$pass\r"
-expect "Verify:"
-send "$pass\r"
-expect "Would you like to enter a view-only password (y/n)?"
-send "n\r"
-expect eof
-exit
-EOF
 
 #Setup firewall rule
 echo "----Allow external connects by allowing ports in ufw"
