@@ -15,7 +15,10 @@ fi
 
 #Run vncserver and pass parameters
 echo "----Run vncserver"
-printf "password\npassword\n\n" | vncpasswd
+mkdir /root/.vnc
+echo password | vncpasswd -f > /root/.vnc/passwd
+chown -R root:root /root/.vnc
+chmod 0600 /root/.vnc/passwd
 vncserver
 
 #Setup firewall rule
