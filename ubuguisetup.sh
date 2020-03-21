@@ -16,9 +16,9 @@ fi
 #Run vncserver and pass parameters
 echo "----Run vncserver"
 vncserver
-sleep 5
 user="$USER"
 pass="password"
+sleep 10
 /usr/bin/expect <<EOF
 expect "Password:"
 send "$pass\r"
@@ -34,7 +34,7 @@ EOF
 echo "----Allow external connects by allowing ports in ufw"
 ufw allow 5901/tcp
 
-# Create systemd file
+#Create systemd file
 echo "----Create Startup Script"
 cat <<EOF > /etc/systemd/system/vncserver@.service
 [Unit]
@@ -53,4 +53,3 @@ WantedBy=multi-user.target
 EOF
 chmod 755 /etc/systemd/system/vncserver@.service
 systemctl daemon-reload && systemctl enable vncserver@1.service
-echo "----Time to reboot!"
