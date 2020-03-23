@@ -1,10 +1,5 @@
-#API > Personal access tokens > Generate
-#curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer DOAPITOKEN" "https://api.digitalocean.com/v2/account/ke
-#ys" > ssh.json
-#cat ssh.json and note the ID for SSH-ID
-
 provider "digitalocean" {
-  token = "APITOKEN"
+  token = "INSERTDOAPITOKEN"
 }
 resource "digitalocean_droplet" "web" {
   name     = "tf-TEST-1"
