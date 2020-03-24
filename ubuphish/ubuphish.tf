@@ -6,7 +6,7 @@ resource "digitalocean_droplet" "phish" {
   image    = "ubuntu-18-04-x64"
   region   = "nyc3"
   size     = "s-1vcpu-2gb"
-  ssh_keys = [26847995]
+  ssh_keys = [SSH-ID]
   provisioner "remote-exec" {
     inline = [
       "export DEBIAN_FRONTEND=noninteractive",
