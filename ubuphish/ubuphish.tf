@@ -11,6 +11,7 @@ resource "digitalocean_droplet" "web" {
     inline = [
       "wget https://raw.githubusercontent.com/s1nglethr3ad/do/master/ubuphish/ubuphish.sh",
       "chmod +x ubuphish.sh",
+      "./ubuphish.sh"
     ]
     connection {
       type        = "ssh"
