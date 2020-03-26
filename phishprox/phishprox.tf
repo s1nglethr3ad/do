@@ -39,3 +39,39 @@ resource "digitalocean_droplet" "phishprox" {
     }
   }
 }
+
+provider "acme" {
+  server_url = "https://acme-staging-v02.api.letsencrypt.org/directory"
+}
+
+resource "tls_private_key" "private_key" {
+  algorithm = "RSA"
+}
+
+resource "acme_registration" "reg" {
+  account_key_pem = tls_private_key.private_key.private_key_pem
+  email_address   = "noreply@live.com"
+}
+
+resource "tls_private_key" "cert_private_key" {
+  algorithm = "RSA"
+}
+
+resource "tls_cert_request" "req" {
+  key_algorithm   = "RSA"
+  private_key_pem = tls_private_key.cert_private_key.private_key_pem
+  dns_names       = ["*.yourdomain.com"]
+
+  subject {
+    common_name = "yourdomain"
+  }
+}
+
+resource "acme_certificate" "certificate" {
+  account_key_pem         = acme_registration.reg.account_key_pem
+  certificate_request_pem = tls_cert_request.req.cert_request_pem
+
+  dns_challenge {
+    provider = "route53"
+  }
+}
