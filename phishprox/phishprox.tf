@@ -51,8 +51,6 @@ resource "digitalocean_droplet" "phishprox" {
       "chmod +x /root/modlishka.json",
       "chmod +x /root/cert_to_modlishka.sh",
       "./certbot.sh",
-      "sleep 60",
-      "./cert_to_modlishka.sh",
       ]
     
     connection {
