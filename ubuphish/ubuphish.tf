@@ -1,3 +1,6 @@
+#ssh root@DO-IP -L3333:localhost:3333 -N -f
+#reboot server when build is complete
+#./root/gophish to run gophish server
 provider "digitalocean" {
   token = "APITOKEN"
 }
@@ -25,10 +28,40 @@ resource "digitalocean_droplet" "phish" {
     ]
     connection {
       type        = "ssh"
-      host        = "${self.ipv4_address}"
-      private_key = "${file("/path/to/ssh/key")}"
+      host        = self.ipv4_address
+      private_key = file("id_rsa")
       user        = "root"
       timeout     = "2m"
     }
   }
 }
+### Uncomment this section for certificate and load-balancer(redir)
+#resource "digitalocean_certificate" "cert" {
+#  name    = "mail"
+#  type    = "lets_encrypt"
+#  domains = ["mail.mydomain.com"]
+#
+#  lifecycle {
+#    create_before_destroy = true
+#  }
+#}
+#resource "digitalocean_domain" "default" {
+#  name       = "mail.mydomain.com"
+#  ip_address = digitalocean_droplet.phish.ipv4_address
+#}
+#resource "digitalocean_loadbalancer" "public" {
+#  name   = "loadbalancer-1"
+#  region = "nyc3"
+#  forwarding_rule {
+#    entry_port = 443
+#    entry_protocol = "https"
+#    target_port = 80
+#    target_protocol = "http"
+#    certificate_id = digitalocean_certificate.cert.id
+#  }
+#  healthcheck {
+#    port     = 22
+#    protocol = "tcp"
+#  }
+#  droplet_ids = [digitalocean_droplet.phish.id]
+#}
