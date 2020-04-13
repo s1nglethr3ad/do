@@ -1,0 +1,6 @@
+postconf -e smtpd_tls_cert_file=/etc/letsencrypt/live/crimsonbyte.net/fullchain.pem
+postconf -e smtpd_tls_key_file=/etc/letsencrypt/live/crimsonbyte.net/privkey.pem
+postconf -e smtpd_tls_security_level=may
+postconf -e smtp_tls_security_level=encrypt
+postconf -e smtpd_use_tls=no
+certbot certonly --manual --preferred-challenges=dns --email validemail@email.com --server https://acme-v02.api.letsencrypt.org/directory --agree-tos -d *.yourdomain.com
