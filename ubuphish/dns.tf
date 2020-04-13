@@ -54,11 +54,3 @@ resource "digitalocean_record" "phishing-rdr-mail-dmarc" {
     type   = "TXT"
     ttl    = 60
 }
-# phishing server
-resource "digitalocean_record" "phishing" {
-    domain = var.domain
-    name   = var.sub1
-    value  = digitalocean_droplet.phishing.ipv4_address
-    type   = "A"
-    ttl    = 120
-}
